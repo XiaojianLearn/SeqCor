@@ -1,0 +1,2 @@
+# SeqCor
+Soruce code for 
