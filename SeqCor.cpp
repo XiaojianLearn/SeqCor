@@ -45,7 +45,7 @@ void	gene_correction(void){
 }
 
 void	document(void) {
-	cerr<<"Usage:	grna [options] grna input output\n";
+	cerr<<"Usage:	SeqCor [options] grna input output\n";
 	cerr<<"\t-g:	covariant	default=NULL\n";	
 	cerr<<"\t-d:	2^dims dimensions	default=9\n";	
 	cerr<<"\t-t:	trees	default=896\n";
