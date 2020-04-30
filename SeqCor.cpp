@@ -4,7 +4,7 @@
 #include	<fstream>
 #include	<unistd.h>
 #include	<omp.h>
-#include	"t1ha.c"
+#include	"wyhash.h"
 #include	<map>
 vector<RNG>	rng;
 vector<float>	yvec;
@@ -45,7 +45,7 @@ void	gene_correction(void){
 }
 
 void	document(void) {
-	cerr<<"Usage:	SeqCor [options] grna input output\n";
+	cerr<<"Usage:	grna [options] grna input output\n";
 	cerr<<"\t-g:	covariant	default=NULL\n";	
 	cerr<<"\t-d:	2^dims dimensions	default=9\n";	
 	cerr<<"\t-t:	trees	default=896\n";
@@ -55,12 +55,12 @@ void	document(void) {
 }
 
 void	seq2vec(string	&S,	float	*P,	uint64_t	Seed){
-	uint64_t	s=t1ha(&Seed,	8,	0);
+	uint64_t	s=wyhash(&Seed,	8,	0,_wyp);
 	for(unsigned	i=0;	i<S.size();	i++){
-		uint64_t	h=t1ha(&i,	4,	s);
+		uint64_t	h=wyhash(&i,	4,	s,_wyp);
 		for(unsigned	j=1;	j<=3;	j++)	if(i+j<=S.size()){	
-			P[t1ha(S.c_str()+i,	j,	s)&(dims-1)]+=1;	
-			P[t1ha(S.c_str()+i,	j,	h)&(dims-1)]-=1;
+			P[wyhash(S.c_str()+i,	j,	s,_wyp)&(dims-1)]+=1;	
+			P[wyhash(S.c_str()+i,	j,	h,_wyp)&(dims-1)]-=1;
 		}
 	}
 }
