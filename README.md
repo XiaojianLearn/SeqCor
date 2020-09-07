@@ -1,12 +1,6 @@
 # SeqCor
 
-## Introduction
 
-The sequence of gRNAs in the library has impacts on the investigation of CRISPR/Cas9-based screening, and building up a standard strategy for correcting results of all gRNA libraries is impracticable.
-
-SeqCor is a program based on random forest algorithm, which enables researchers to address the result bias potentially caused by the composition of gRNA sequence by the organization of gRNA in the library
-utilized in CRISPR/Cas9-based screening. In light of four public CRISPR/Cas9-based screening data, SeqCor
-completely computerizes the extracting of sub-sequence that may influence sgRNA knockout efficacy in a machine learning manner.
 
 ## Compile
 
@@ -45,10 +39,6 @@ trees	896
 mtry	2
 leaf	11
 ```
-
-## Citation
-
-JianXiao Liu, Qiurong Ding, Yi Wang et al. SeqCor: correct the effect of gRNA sequences on experiments by machine learning algorithm. 2020 (**Manuscript submitted**)
 
 ## Contacts
 
