@@ -39,7 +39,34 @@ trees	896
 mtry	2
 leaf	11
 ```
+#example data
+```
+$ unzip example\ data.zip
 
+$ more example\ data/gRNA.txt
+AAAGAGAGAAGAAATCTTAT
+ACAACTGCCGATTATTTGTT
+GCAGAAATGGGCGCCTCTTA
+TGGTGGCCCTCCACCTGGTT
+AAATATGGTGGCCCTCCACC
+
+$ more example\ data/input.txt
+5.3659760
+5.6869754
+6.0450053
+5.6167711
+0
+
+$ ./SeqCor example\ data/gRNA.txt example\ data/input.txt output.txt
+
+$ more output.txt
+5.69994
+5.66099
+6.01038
+5.68672
+6.05828
+
+```
 ## Contacts
 
 For questions, request and bug reports, please contact: [wangyi_fudan@fudan.edu.cn](mailto:wangyi_fudan@fudan.edu.cn) 
